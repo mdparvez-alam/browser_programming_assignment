@@ -1,44 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MD PARVEZ ALAM</title>
 </head>
 <body>
-
+<a href="#main">Skip to content</a>
   <header>
-    <h1>Your Name</h1>
-    <p>Short description / role</p>
+    <h1>MD PARVEZ ALAM</h1>
+
+    <p>
+      I am parvez and student of savonia university of applied sciences, I am studying in IOT
+      Now I am second year student.
+    </p>
+
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#interests">Areas of Interest</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
   <main id="main">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Write a short introduction.</p>
+    <section id="portfolio" aria-labelledby="portfolio-heading">
+      <h2 id="portfolio-heading">Portfolio / Works</h2>
+
+      <figure>
+        <img src="https://i.ibb.co/0RYGTzwC/Whats-App-Image-2026-01-21-at-16-52-07-1.jpg" alt="I captured this picture in the last autumn" width="500" height="600">
+        <figcaption>
+          A simple workspace photo used as a placeholder while I prepare my own profile image.
+        </figcaption>
+      </figure>
+
+      <section aria-labelledby="links-heading">
+        <h3 id="links-heading">Links</h3>
+        <ul>
+          <li><a href="https://github.com/mdparvez-alam" rel="noopener">GitHub profile</a></li>
+          <li><a href="https://www.linkedin.com/in/parvez-alam-pavel-820b373a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" rel="noopener">LinkedIn profile</a></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="video-heading">
+        <h3 id="video-heading">Featured video</h3>
+        <figure>
+          <iframe 
+  src="https://www.youtube.com/embed/jnnj3RUypFQ"
+  title="My project video"
+  width="560"
+  height="315"
+  allowfullscreen>
+</iframe>
+          <figcaption>
+            A short HTML video embed used here to practice semantic structure and accessible media.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="projects-heading">
+        <h3 id="projects-heading">Projects</h3>
+
+        <article aria-labelledby="project-1-title">
+          <h4 id="project-1-title">Project 1 — Personal Portfolio (Lecture 01)</h4>
+          <p>
+            A simple starter portfolio focusing on clear content and a basic page layout.
+          </p>
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=60"
+              alt="Code on a screen, representing a web development project">
+            <figcaption>
+              Screenshot placeholder for my Lecture 01 portfolio homepage.
+            </figcaption>
+          </figure>
+         
+        </article>
+
+        <article aria-labelledby="project-2-title">
+          <h4 id="project-2-title">Project 2 — Semantic HTML Upgrade (Lecture 02)</h4>
+          <p>
+            This lecture improves the same portfolio by using semantic elements, meaningful grouping, and accessibility basics.
+          </p>
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=60"
+              alt="A laptop displaying code and a text editor">
+            <figcaption>
+              Placeholder image for the updated structure with semantic sections and media.
+            </figcaption>
+          </figure>
+         
+        </article>
+      </section>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>Projects will be added later.</p>
-    </section>
+    <section id="interests" aria-labelledby="interests-heading">
+      <h2 id="interests-heading">Areas of Interest</h2>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email or links.</p>
+      <article aria-labelledby="interests-subheading">
+        <h3 id="interests-subheading">What I like learning and building</h3>
+        <ul>
+          <li>Semantic HTML and accessibility (screen reader-friendly structure)</li>
+          <li>Web performance basics (clean markup, meaningful content)</li>
+          <li>Frontend fundamentals (forms, media, navigation patterns)</li>
+          <li>Design systems and writing clear UI content</li>
+          <li>Technology and problem-solving through small projects</li>
+        </ul>
+      </article>
+
+      <article aria-labelledby="hobbies-subheading">
+        <h3 id="hobbies-subheading">Hobbies</h3>
+        <ol>
+          <li>Exploring new tools and learning by making mini projects</li>
+          <li>Photography and editing (for portfolio visuals)</li>
+          <li>Reading about tech and productivity</li>
+        </ol>
+      </article>
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 Your Name</p>
-  </footer>
+  <footer id="contact">
+    <h2>Contact &amp; Social</h2>
+    <p>
+      Find me online:
+    </p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/parvez-alam-pavel-820b373a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/mdparvez-alam" rel="noopener">GitHub</a></li>
+      <li><a href="mailto: md.parvez.alam.pavel@gmail.com">Email</a></li>
+    </ul>
 
+    <p>
+      <small>&copy; MD PARVEZ ALAM. Built with semantic HTML.</small>
+    </p>
+  </footer>
 </body>
 </html>
