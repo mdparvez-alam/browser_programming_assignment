@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-SHOP</title>
+  <style>
+    :root{
+      --bg:#f3f4f6;
+      --card:#ffffff;
+      --primary:#d84315; /* red-ish for CTA */
+      --accent:#ffd814; /* add-to-cart */
+      --muted:#6b7280;
+      --success:#16a34a;
+      --container:1200px;
+      --gap:18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#111827;
+    }
+
+    html,body{height:100%;background:var(--bg);margin:0}
+    .wrap{max-width:var(--container);margin:28px auto;padding:0 16px;}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:100px;width:220px;object-fit:contain}
+    .brand h1{font-size:20px;margin:0}
+
+    nav{display:flex;gap:8px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:6px;font-size:14px}
+    nav a:hover{background:#fff;border:1px solid #e6e6e6;color:#111827}
+
+    .header-actions{display:flex;align-items:center;gap:12px}
+    .cart-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e6e6e6;padding:8px 12px;border-radius:8px}
+    .signin{background:var(--primary);color:#fff;padding:8px 12px;border-radius:8px;border:none}
+
+    /* Search area */
+    .searchbar{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+    .searchbar input[type="search"]{flex:1;padding:10px 12px;border-radius:8px;border:1px solid #e5e7eb;background:#fff}
+    .searchbar select{padding:10px;border-radius:8px;border:1px solid #e5e7eb;background:#fff}
+
+    /* Layout */
+    .main{display:grid;grid-template-columns:1fr 340px;gap:var(--gap)}
+    @media (max-width:900px){.main{grid-template-columns:1fr}}
+
+    /* Product grid */
+    .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+    .card{background:var(--card);border-radius:10px;padding:12px;border:1px solid #e6e6e6;display:flex;flex-direction:column;gap:10px;box-shadow:0 2px 8px rgba(15,15,15,0.04)}
+    .card .media{height:150px;display:flex;align-items:center;justify-content:center;background:#fafafa;border-radius:6px;overflow:hidden}
+    .card img{max-width:100%;max-height:100%;object-fit:contain}
+    .meta{display:flex;flex-direction:column;gap:6px}
+    .title{font-weight:600;font-size:15px;line-height:1.2}
+    .price{font-weight:700;color:var(--primary);font-size:17px}
+    .seller{font-size:12px;color:var(--muted)}
+
+    .stars{color:#f59e0b;font-size:13px}
+
+    .cta-row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+    .add-btn{background:var(--accent);border:none;padding:8px 10px;border-radius:8px;font-weight:700;cursor:pointer}
+    .add-btn:active{transform:translateY(1px)}
+
+    /* Cart */
+    .cart{background:var(--card);border-radius:10px;padding:14px;border:1px solid #e6e6e6}
+    .cart h3{margin:0 0 8px 0}
+    .cart-list{display:flex;flex-direction:column;gap:10px;margin-bottom:10px}
+    .cart-item{display:flex;gap:10px;align-items:center}
+    .cart-item img{width:56px;height:56px;object-fit:cover;border-radius:6px}
+    .cart-item .ci-meta{flex:1}
+    .ci-title{font-size:13px;font-weight:600}
+    .ci-price{font-weight:700;color:var(--primary);font-size:14px}
+
+    .totals{border-top:1px dashed #e6e6e6;padding-top:12px;display:flex;flex-direction:column;gap:8px}
+    .totals .row{display:flex;justify-content:space-between}
+    .checkout{background:var(--primary);color:#fff;padding:12px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
+
+    /* Footer */
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Small tweaks */
+    .badge{background:#fff;border:1px solid #e6e6e6;padding:6px 8px;border-radius:10px;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="./logo.png" alt="EMA-JOHN logo" onerror="this.src='https://via.placeholder.com/260x44?text=EMA-JOHN'" />
+        
+      </div>
+
+      <div class="header-actions">
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Order Review</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="cart-btn">
+          🛒 <span class="badge">(0)</span>
+        </div>
+        <button class="signin">Sign In</button>
+      </div>
+    </header>
+
+    <div class="searchbar">
+      <input type="search" placeholder="Search products..." aria-label="Search products" />
+      <select aria-label="Sort">
+        <option>Relevance</option>
+        <option>Price: Low → High</option>
+        <option>Price: High → Low</option>
+        <option>Top Rated</option>
+      </select>
+    </div>
+
+    <div class="main">
+      <main>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <h2 style="margin:0">All Products <span style="color:var(--muted);font-weight:600;font-size:13px">(5 items)</span></h2>
+        </div>
+
+        <section class="products">
+
+          <!-- Product 1 -->
+          <article class="card">
+            <div class="media"><img src="./headphone.jpg" alt="Headphones" /></div>
+            <div class="meta">
+              <div class="title">Headphones, Premium Studio Quality</div>
+              <div class="price">€199.99</div>
+              <div class="stars">★★★★★ <span style="color:var(--muted);font-size:12px">(340)</span></div>
+              <div class="seller">Seller: Acme Audio • Stock: 10</div>
+            </div>
+            <div class="cta-row">
+              <button class="add-btn">Add to cart</button>
+              <div style="font-size:12px;color:var(--muted)">Shipping €5.00</div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="card">
+            <div class="media"><img src="./cup-coffee.jpg" alt="Mug" /></div>
+            <div class="meta">
+              <div class="title">Ceramic Coffee Mug with Ergonomic Handle</div>
+              <div class="price">€7.50</div>
+              <div class="stars">★★★★☆ <span style="color:var(--muted);font-size:12px">(80)</span></div>
+              <div class="seller">Seller: CozyKitchen • Stock: 15</div>
+            </div>
+            <div class="cta-row">
+              <button class="add-btn">Add to cart</button>
+              <div style="font-size:12px;color:var(--muted)">Shipping €3.00</div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="card">
+            <div class="media"><img src="./camera.jpg" alt="Webcam" /></div>
+            <div class="meta">
+              <div class="title">4K Ultra HD Webcam with Auto-Focus</div>
+              <div class="price">€89.99</div>
+              <div class="stars">★★★★☆ <span style="color:var(--muted);font-size:12px">(120)</span></div>
+              <div class="seller">Seller: CamCorp • Stock: 5</div>
+            </div>
+            <div class="cta-row">
+              <button class="add-btn">Add to cart</button>
+              <div style="font-size:12px;color:var(--muted)">Shipping €4.50</div>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="card">
+            <div class="media"><img src="./keyboard.jpg" alt="Keyboard" /></div>
+            <div class="meta">
+              <div class="title">Mechanical Keyboard, RGB Backlit</div>
+              <div class="price">€120.00</div>
+              <div class="stars">★★★★★ <span style="color:var(--muted);font-size:12px">(550)</span></div>
+              <div class="seller">Seller: KeyForge • Stock: 25</div>
+            </div>
+            <div class="cta-row">
+              <button class="add-btn">Add to cart</button>
+              <div style="font-size:12px;color:var(--muted)">Shipping €6.00</div>
+            </div>
+          </article>
+
+          <!-- Product 5 -->
+          <article class="card">
+            <div class="media"><img src="./charger-pad.jpg" alt="Wireless Charger" /></div>
+            <div class="meta">
+              <div class="title">Wireless Charging Pad, Fast Charge</div>
+              <div class="price">€25.00</div>
+              <div class="stars">★★★★☆ <span style="color:var(--muted);font-size:12px">(90)</span></div>
+              <div class="seller">Seller: ChargeIt • Stock: 30</div>
+            </div>
+            <div class="cta-row">
+              <button class="add-btn">Add to cart</button>
+              <div style="font-size:12px;color:var(--muted)">Shipping €2.00</div>
+            </div>
+          </article>
+
+        </section>
+      </main>
+
+      <aside class="cart">
+        <h3>Your Cart</h3>
+        <div class="cart-list">
+          <!-- static sample item -->
+          <div style="font-size:13px;color:var(--muted)">Your cart is empty</div>
+        </div>
+
+        <div class="totals">
+          <div class="row"><div>Subtotal</div><div>€0.00</div></div>
+          <div class="row"><div>Shipping</div><div>€0.00</div></div>
+          <div class="row" style="font-weight:700;font-size:16px"><div>Total</div><div>€0.00</div></div>
+          <button class="checkout" style="width:100%;margin-top:6px">Checkout</button>
+          <button style="width:100%;margin-top:8px;padding:10px;border-radius:8px;border:1px solid #e6e6e6;background:#fff">Continue Shopping</button>
+        </div>
+
+       
+      </aside>
+
+    </div>
+
+    <footer>
+      © ESHOP • Built as a simple static template
+    </footer>
+  </div>
+</body>
+</html>
