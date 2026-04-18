@@ -6,7 +6,7 @@
   // NEW: Function to fetch data from GitHub
   async function loadProducts() {
     try {
-      const response = await fetch('https://raw.githubusercontent.com/ProgrammingHero1/ema-john-simple-resources/master/fakeData/products.JSON');
+      const response = await fetch('https://raw.githubusercontent.com/mdparvez-alam/browser_programming_assignment/refs/heads/main/E-Shop/products.json');
       const data = await response.json();
       
       // Map the external data to match your existing property names
