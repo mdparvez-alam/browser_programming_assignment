@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MD PARVEZ ALAM | IoT & AI Developer</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --accent: #38bdf8; /* Sky Blue */
+      --accent-2: #818cf8; /* Indigo */
+      --text-bright: #f1f5f9;
+      --text-dim: #94a3b8;
+      --finnish-blue: #003580;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-dim);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .nav-logo { font-family: 'Space+Grotesk', sans-serif; color: var(--text-bright); }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    /* --- Navigation --- */
+    nav {
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-content { display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-weight: 700; font-size: 1.2rem; letter-spacing: 1px; }
+    .nav-links { list-style: none; display: flex; gap: 2rem; }
+    .nav-links a { color: var(--text-bright); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* --- Hero Section --- */
+    .hero {
+      padding: 8rem 0 5rem;
+      text-align: center;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent);
+    }
+    .hero h1 { font-size: 4rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; }
+    .badge-container { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .badge {
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--accent);
+    }
+    .badge.finnish { border-color: var(--finnish-blue); color: #fff; background: var(--finnish-blue); }
+
+    /* --- Sections --- */
+    section { padding: 5rem 0; }
+    .section-title { font-size: 2rem; margin-bottom: 3rem; display: flex; align-items: center; gap: 15px; }
+    .section-title::after { content: ""; height: 1px; background: rgba(255,255,255,0.1); flex: 1; }
+
+    /* --- Project Cards --- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.4s ease;
+    }
+    .card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .card-img { width: 100%; height: 220px; object-fit: cover; filter: grayscale(30%); transition: 0.4s; }
+    .card:hover .card-img { filter: grayscale(0%); }
+    .card-body { padding: 1.5rem; }
+    .card-body h3 { margin-bottom: 0.5rem; color: var(--accent); }
+    .tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-2); font-weight: 700; }
+
+    /* --- Skills Section --- */
+    .skills-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-category {
+      background: rgba(255,255,255,0.03);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+    .skill-category i { font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; }
+
+    /* --- Footer --- */
+    footer { padding: 4rem 0; background: #0a0f1a; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
+    .social-links { display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; }
+    .social-links a { font-size: 1.5rem; color: var(--text-dim); transition: 0.3s; }
+    .social-links a:hover { color: var(--accent); }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-content">
+      <div class="nav-logo">PARVEZ.ALAM</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="badge-container">
+        <span class="badge">IoT Engineer-in-Training</span>
+        <span class="badge">AI/ML Developer</span>
+        <span class="badge finnish"><i class="fas fa-globe"></i> Suomi Skills (Finnish)</span>
+      </div>
+      <h1>Md Parvez Alam</h1>
+      <p>
+        Building the future of <strong>IoT</strong> and <strong>Artificial Intelligence</strong> at Savonia University. 
+        Focusing on robotics automation and cybersecurity integration.
+      </p>
+      <div class="social-links" style="margin-top: 0;">
+        <a href="https://github.com/mdparvez-alam"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/parvez-alam-pavel-820b373a2"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <section id="projects">
+      <h2 class="section-title"><i class="fas fa-code-branch"></i> Major Projects</h2>
+      <div class="grid">
+        
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="AI Interface" class="card-img">
+          <div class="card-body">
+            <span class="tag">Machine Learning / AI</span>
+            <h3>Fraud Detection Model</h3>
+            <p>Developed an AI system using Python and Scikit-learn to identify fraudulent transactions with high precision, analyzing complex data patterns.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://www.robotlab.com/hubfs/Niryo%20Ned2-Conveyor0side-photo.png?auto=format&fit=crop&w=800&q=80" alt="Robotic Arm" class="card-img">
+          <div class="card-body">
+            <span class="tag">Robotics / Automation</span>
+            <h3>Niryo Collaborative Robot</h3>
+            <p>Programmed and integrated a Niryo collaborative robot for industrial automation tasks, focusing on precision pick-and-place and workflow optimization.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity" class="card-img">
+          <div class="card-body">
+            <span class="tag">Security / Kali Linux</span>
+            <h3>Penetration Testing Lab</h3>
+            <p>Conducted vulnerability assessments and network security testing using Kali Linux environments to secure IoT devices.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title"><i class="fas fa-tools"></i> Technical Expertise</h2>
+      <div class="skills-box">
+        <div class="skill-category">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Web Dev</h3>
+          <p>HTML5, CSS3, JavaScript (ES6+), Semantic Structure.</p>
+        </div>
+        <div class="skill-category">
+          <i class="fas fa-microchip"></i>
+          <h3>IoT & Robotics</h3>
+          <p>Niryo Robotics, Sensor Integration, Arduino/Raspberry Pi.</p>
+        </div>
+        <div class="skill-category">
+          <i class="fas fa-brain"></i>
+          <h3>Data Science</h3>
+          <p>Python AI Models, Fraud Detection, Data Analysis.</p>
+        </div>
+        <div class="skill-category">
+          <i class="fas fa-shield-halved"></i>
+          <h3>Security</h3>
+          <p>Kali Linux, Network Monitoring, IoT Security Protocols.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><i class="fas fa-play-circle"></i> Project Demo</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+        <iframe 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;"
+          src="https://www.youtube.com/embed/ordeAlHF5Qg" 
+          title="Project Demo"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <h2>Let's Build Something Together</h2>
+      <p>I am currently open to internships and IoT research collaborations.</p>
+      
+      <div class="social-links">
+        <a href="https://github.com/mdparvez-alam"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/parvez-alam-pavel-820b373a2"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:md.parvez.alam.pavel@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      
+      <p><small>&copy; 2026 MD PARVEZ ALAM | IoT Portfolio</small></p>
+    </div>
+  </footer>
+
+</body>
+</html>
