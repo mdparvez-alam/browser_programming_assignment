@@ -13,9 +13,9 @@ Each lecture folder contains the state of your portfolio after that lecture.
    - Add meaningful commits and update README
 
 ## Live site
-(Later, add your GitHub Pages link here)
+(, https://github.com/mdparvez-alam/browser_programming_assignment)
 
 ## Student
-Name:
-Degree programme:
-Semester:
+Name:MD PARVEZ ALAM
+Degree programme:Information Technology 
+Semester:4
